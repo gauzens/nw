@@ -12,8 +12,3 @@ kglobvar.pas defines the data structure\
 ### Prerequisites
 
 Works only with Windows (tested on xp, seven and 10)
-
-
-f_*.pas define the graphical interface
-k*.pas contain the different algorithms
-kglobvar.pas defines the data structure
