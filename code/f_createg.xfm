@@ -1,0 +1,424 @@
+object form_create_graphe: Tform_create_graphe
+  Left = 286
+  Top = 128
+  Width = 380
+  Height = 800
+  VertScrollBar.Range = 784
+  HorzScrollBar.Range = 378
+  ActiveControl = edit_nb_sommets
+  Caption = 'CREATE NETWORK'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100000000000E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000FF000099999999999999990000000000FF00009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999CCCCCCCFFFFFFF0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F000000000FFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF00000009999999CCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCC0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object edit_nb_sommets: TEdit
+    Left = 100
+    Top = 20
+    Width = 80
+    Height = 21
+    TabOrder = 0
+  end
+  object label_nb_sommets: TLabel
+    Left = 10
+    Top = 28
+    Width = 67
+    Height = 13
+    Caption = 'Nb of Species'
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 781
+    Width = 380
+    Height = 19
+    Panels = <>
+  end
+  object RadioGroup1: TRadioGroup
+    Left = 0
+    Top = 60
+    Width = 378
+    Height = 660
+    Caption = 'Type of Network'
+    TabOrder = 3
+  end
+  object radio_void: TRadioButton
+    Left = 24
+    Top = 90
+    Width = 113
+    Height = 17
+    Caption = 'Void Network'
+    TabOrder = 4
+    OnClick = radio_voidClick
+  end
+  object radio_random: TRadioButton
+    Left = 24
+    Top = 270
+    Width = 113
+    Height = 17
+    Caption = 'Random Network'
+    TabOrder = 5
+    OnClick = radio_randomClick
+  end
+  object radio_subgraph: TRadioButton
+    Left = 24
+    Top = 420
+    Width = 145
+    Height = 17
+    Caption = 'Random SubNetwork of'
+    TabOrder = 6
+    OnClick = radio_subgraphClick
+  end
+  object edit_p_random: TEdit
+    Left = 240
+    Top = 264
+    Width = 80
+    Height = 21
+    TabOrder = 7
+  end
+  object edit_subgraphe_pere: TEdit
+    Left = 240
+    Top = 416
+    Width = 40
+    Height = 21
+    TabOrder = 8
+  end
+  object button_ok: TButton
+    Left = 48
+    Top = 740
+    Width = 75
+    Height = 25
+    Caption = 'OK'
+    TabOrder = 9
+    OnClick = button_okClick
+  end
+  object button_cancel: TButton
+    Left = 248
+    Top = 740
+    Width = 75
+    Height = 25
+    Caption = 'Cancel'
+    TabOrder = 10
+    OnClick = button_cancelClick
+  end
+  object button_apply: TButton
+    Left = 148
+    Top = 740
+    Width = 75
+    Height = 25
+    Caption = 'Apply'
+    TabOrder = 11
+    OnClick = button_applyClick
+  end
+  object radio_tree: TRadioButton
+    Left = 24
+    Top = 460
+    Width = 97
+    Height = 17
+    Caption = 'Random Tree'
+    TabOrder = 12
+    OnClick = radio_treeClick
+  end
+  object edit_p_tree: TEdit
+    Left = 240
+    Top = 456
+    Width = 80
+    Height = 21
+    TabOrder = 13
+  end
+  object edit_degree_tree: TEdit
+    Left = 240
+    Top = 490
+    Width = 80
+    Height = 21
+    TabOrder = 14
+  end
+  object edit_nb_niv_tree: TEdit
+    Left = 240
+    Top = 524
+    Width = 80
+    Height = 21
+    TabOrder = 15
+  end
+  object label_degree: TLabel
+    Left = 184
+    Top = 496
+    Width = 45
+    Height = 13
+    Caption = 'In-degree'
+  end
+  object label_nb_niv: TLabel
+    Left = 176
+    Top = 528
+    Width = 56
+    Height = 13
+    Caption = 'Nb of levels'
+  end
+  object radio_som: TRadioButton
+    HelpType = htContext
+    Left = 24
+    Top = 674
+    Width = 121
+    Height = 17
+    Caption = 'Compose Network #'
+    TabOrder = 18
+    TabStop = False
+    OnClick = radio_somClick
+  end
+  object edit_g1: TEdit
+    Left = 152
+    Top = 666
+    Width = 40
+    Height = 21
+    TabOrder = 19
+  end
+  object edit_g2: TEdit
+    Left = 280
+    Top = 666
+    Width = 40
+    Height = 21
+    TabOrder = 20
+  end
+  object label_compose: TLabel
+    Left = 200
+    Top = 676
+    Width = 71
+    Height = 13
+    Caption = 'and Network #'
+  end
+  object edit_seed: TEdit
+    Left = 276
+    Top = 20
+    Width = 80
+    Height = 21
+    TabOrder = 22
+  end
+  object label_seed: TLabel
+    Left = 240
+    Top = 28
+    Width = 25
+    Height = 13
+    Caption = 'Seed'
+  end
+  object radio_unif: TRadioButton
+    Left = 24
+    Top = 310
+    Width = 145
+    Height = 17
+    Caption = 'Random Uniform Network'
+    TabOrder = 24
+    OnClick = radio_unifClick
+  end
+  object edit_nb_links: TEdit
+    Left = 240
+    Top = 304
+    Width = 80
+    Height = 21
+    TabOrder = 25
+  end
+  object radio_smallw: TRadioButton
+    Left = 24
+    Top = 350
+    Width = 161
+    Height = 17
+    Caption = 'Random SmallWorld Network'
+    TabOrder = 26
+    OnClick = radio_smallwClick
+  end
+  object edit_p_smallw: TEdit
+    Left = 240
+    Top = 344
+    Width = 80
+    Height = 21
+    TabOrder = 27
+  end
+  object edit_degree_smallw: TEdit
+    Left = 240
+    Top = 376
+    Width = 80
+    Height = 21
+    TabOrder = 28
+  end
+  object label_p_smallw: TLabel
+    Left = 200
+    Top = 352
+    Width = 28
+    Height = 13
+    Caption = 'Proba'
+  end
+  object label_degree_smallw: TLabel
+    Left = 192
+    Top = 384
+    Width = 35
+    Height = 13
+    Caption = 'Degree'
+  end
+  object radio_null_deg: TRadioButton
+    Left = 24
+    Top = 130
+    Width = 129
+    Height = 17
+    Caption = 'Degree Model from'
+    TabOrder = 31
+    OnClick = radio_null_degClick
+  end
+  object Label5: TLabel
+    Left = 222
+    Top = 132
+    Width = 7
+    Height = 13
+    Caption = '#'
+  end
+  object edit_null_deg_pere: TEdit
+    Left = 240
+    Top = 128
+    Width = 40
+    Height = 21
+    TabOrder = 33
+  end
+  object radio_null_bit: TRadioButton
+    Left = 24
+    Top = 170
+    Width = 113
+    Height = 17
+    Caption = 'BIT Model from'
+    TabOrder = 34
+    OnClick = radio_null_bitClick
+  end
+  object Label1: TLabel
+    Left = 222
+    Top = 172
+    Width = 7
+    Height = 13
+    Caption = '#'
+  end
+  object edit_null_bit_pere: TEdit
+    Left = 240
+    Top = 168
+    Width = 40
+    Height = 21
+    TabOrder = 36
+  end
+  object radio_null_niche: TRadioButton
+    Left = 24
+    Top = 210
+    Width = 113
+    Height = 17
+    Caption = 'Niche Model'
+    TabOrder = 37
+    OnClick = radio_null_nicheClick
+  end
+  object label_c: TLabel
+    Left = 200
+    Top = 216
+    Width = 30
+    Height = 13
+    Caption = 'L/S^2'
+  end
+  object edit_c: TEdit
+    Left = 240
+    Top = 208
+    Width = 81
+    Height = 21
+    TabOrder = 39
+  end
+  object Label2: TLabel
+    Left = 222
+    Top = 420
+    Width = 7
+    Height = 13
+    Caption = '#'
+  end
+  object label_p_random: TLabel
+    Left = 200
+    Top = 272
+    Width = 28
+    Height = 13
+    Caption = 'Proba'
+  end
+  object label_nb_links: TLabel
+    Left = 176
+    Top = 312
+    Width = 54
+    Height = 13
+    Caption = 'Nb of Links'
+  end
+  object label_p_tree: TLabel
+    Left = 200
+    Top = 464
+    Width = 28
+    Height = 13
+    Caption = 'Proba'
+  end
+  object radio_root: TRadioButton
+    Left = 24
+    Top = 584
+    Width = 129
+    Height = 17
+    Caption = 'Rooted Network from'
+    TabOrder = 44
+    OnClick = radio_rootClick
+  end
+  object Label3: TLabel
+    Left = 222
+    Top = 580
+    Width = 7
+    Height = 13
+    Caption = '#'
+  end
+  object edit_root_pere: TEdit
+    Left = 240
+    Top = 576
+    Width = 40
+    Height = 21
+    TabOrder = 46
+  end
+  object radio_dual: TRadioButton
+    Left = 24
+    Top = 624
+    Width = 113
+    Height = 17
+    Caption = 'Dual Network of'
+    TabOrder = 47
+    OnClick = radio_dualClick
+  end
+  object edit_dual_pere: TEdit
+    Left = 240
+    Top = 616
+    Width = 41
+    Height = 21
+    TabOrder = 48
+  end
+  object Label4: TLabel
+    Left = 222
+    Top = 620
+    Width = 7
+    Height = 13
+    Caption = '#'
+  end
+end

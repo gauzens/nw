@@ -1,0 +1,274 @@
+object Form_edit: TForm_edit
+  Left = 742
+  Top = 110
+  Width = 500
+  Height = 594
+  VertScrollBar.Range = 228
+  HorzScrollBar.Range = 185
+  ActiveControl = memo1
+  Caption = 'NETWORK FILE'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100000000000E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000FF000099999999999999990000000000FF00009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999CCCCCCCFFFFFFF0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F000000000FFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF00000009999999CCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCC0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  Menu = MainMenu1
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object memo1: TMemo
+    Left = 96
+    Top = 128
+    Width = 89
+    Height = 81
+    Lines.Strings = (
+      'memo1')
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+    WordWrap = False
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 552
+    Width = 500
+    Height = 19
+    Font.CharSet = fcsAnyCharSet
+    Font.Color = clBlack
+    Font.Height = 11
+    Font.Name = 'Verdana'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    Font.Weight = 0
+    Panels = <
+      item
+        Width = 300
+      end
+      item
+        Width = 120
+      end
+      item
+      end>
+    ParentFont = False
+  end
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 500
+    Height = 29
+    ButtonHeight = 23
+    Caption = 'ToolBar1'
+    Images = form_nw.ImageList1
+    TabOrder = 2
+    object file_open_button: TToolButton
+      HelpType = htContext
+      Left = 1
+      Top = 4
+      Height = 23
+      Action = file_open
+      Caption = 'file_open'
+    end
+    object file_save_button: TToolButton
+      HelpType = htContext
+      Left = 24
+      Top = 4
+      Height = 23
+      Action = file_saveas
+      Caption = 'file_saveas'
+      ImageIndex = 2
+    end
+    object ToolButton7: TToolButton
+      Left = 47
+      Top = 4
+      Width = 8
+      Height = 23
+      Style = tbsSeparator
+      Caption = 'ToolButton7'
+      ImageIndex = 6
+    end
+    object edit_cut_button: TToolButton
+      HelpType = htContext
+      Left = 55
+      Top = 4
+      Height = 23
+      Action = EditCut1
+      Caption = 'Cu&t'
+      ParentShowHint = False
+      ShowHint = True
+    end
+    object edit_copy_button: TToolButton
+      HelpType = htContext
+      Left = 78
+      Top = 4
+      Height = 23
+      Action = EditCopy1
+      Caption = '&Copy'
+    end
+    object edit_paste_button: TToolButton
+      HelpType = htContext
+      Left = 101
+      Top = 4
+      Height = 23
+      Action = EditPaste1
+      Caption = '&Paste'
+    end
+    object ToolButton3: TToolButton
+      Left = 124
+      Top = 4
+      Width = 8
+      Height = 23
+      Style = tbsSeparator
+      Caption = 'ToolButton3'
+      ImageIndex = 8
+    end
+    object file_compil_button: TToolButton
+      HelpType = htContext
+      Left = 132
+      Top = 4
+      Height = 23
+      Hint = 'compile model file'
+      Action = file_compil
+      Caption = 'file_compil'
+    end
+  end
+  object PageControl1: TPageControl
+    Left = 0
+    Top = 29
+    Width = 500
+    Height = 523
+    Align = alClient
+    TabOrder = 3
+    OnChange = PageControl1Change
+  end
+  object MainMenu1: TMainMenu
+    Images = form_nw.ImageList1
+    Left = 424
+    Top = 304
+    object File1: TMenuItem
+      Caption = 'File'
+      object Open1: TMenuItem
+        Action = file_open
+        Caption = '&Open'
+      end
+      object Save1: TMenuItem
+        Action = file_save
+        Caption = '&Save'
+      end
+      object saveAs1: TMenuItem
+        Action = file_saveas
+        Caption = 'Save &As'
+      end
+      object Close1: TMenuItem
+        Action = file_close
+        Caption = 'Close'
+      end
+      object N2: TMenuItem
+        Caption = '-'
+      end
+      object Compile1: TMenuItem
+        Action = file_compil
+        Caption = '&Compile'
+      end
+      object N3: TMenuItem
+        Caption = '-'
+      end
+      object Exit1: TMenuItem
+        Action = file_exit
+        Caption = 'E&xit'
+      end
+    end
+    object N1: TMenuItem
+      Caption = 'Edit'
+      object Edit1: TMenuItem
+        Action = EditCut1
+      end
+      object Copy1: TMenuItem
+        Action = EditCopy1
+      end
+      object Paste1: TMenuItem
+        Action = EditPaste1
+      end
+    end
+  end
+  object ActionList1: TActionList
+    Images = form_nw.ImageList1
+    Left = 384
+    Top = 312
+    object file_compil: TAction
+      Category = 'file'
+      Caption = 'file_compil'
+      ImageIndex = 6
+      OnExecute = file_compilExecute
+    end
+    object EditCut1: TEditCut
+      Category = 'Edit'
+      Caption = 'Cu&t'
+      Hint = 'Cut|Cuts the selection and puts it on the Clipboard'
+      ImageIndex = 3
+      ShortCut = 16472
+    end
+    object EditCopy1: TEditCopy
+      Category = 'Edit'
+      Caption = '&Copy'
+      Hint = 'Copy|Copies the selection and puts it on the Clipboard'
+      ImageIndex = 4
+      ShortCut = 16451
+    end
+    object EditPaste1: TEditPaste
+      Category = 'Edit'
+      Caption = '&Paste'
+      Hint = 'Paste|Inserts Clipbaord contents'
+      ImageIndex = 5
+      ShortCut = 16470
+    end
+    object file_open: TAction
+      Category = 'file'
+      Caption = 'file_open'
+      ImageIndex = 1
+      OnExecute = file_openExecute
+    end
+    object file_save: TAction
+      Category = 'file'
+      Caption = 'file_save'
+      ImageIndex = 2
+      OnExecute = file_saveExecute
+    end
+    object file_saveas: TAction
+      Category = 'file'
+      Caption = 'file_saveas'
+      OnExecute = file_saveasExecute
+    end
+    object file_exit: TAction
+      Category = 'file'
+      Caption = 'file_exit'
+      OnExecute = file_exitExecute
+    end
+    object file_close: TAction
+      Category = 'file'
+      Caption = 'file_close'
+      OnExecute = file_closeExecute
+    end
+  end
+end

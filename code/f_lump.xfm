@@ -1,0 +1,129 @@
+object Form_lump: TForm_lump
+  Left = 320
+  Top = 602
+  Width = 307
+  Height = 306
+  VertScrollBar.Range = 289
+  HorzScrollBar.Range = 297
+  ActiveControl = radio_fromfile
+  Caption = 'AGGREGATION'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100000000000E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000FF000099999999999999990000000000FF00009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999CCCCCCCFFFFFFF0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F000000000FFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF00000009999999CCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCC0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  OnActivate = FormActivate
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object GroupBox1: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 289
+    Height = 193
+    Caption = 'Aggregation criteria'
+    TabOrder = 0
+    object radio_fromfile: TRadioButton
+      Left = 16
+      Top = 40
+      Width = 89
+      Height = 17
+      Caption = 'From file -->'
+      TabOrder = 0
+    end
+    object radio_troph_sim: TRadioButton
+      Left = 16
+      Top = 80
+      Width = 113
+      Height = 17
+      Caption = 'Trophic similarity'
+      TabOrder = 1
+    end
+    object radio_biol_crit: TRadioButton
+      Left = 16
+      Top = 120
+      Width = 121
+      Height = 17
+      Caption = 'Biological criteria --> '
+      TabOrder = 2
+    end
+    object radio_random: TRadioButton
+      Left = 16
+      Top = 160
+      Width = 113
+      Height = 17
+      Caption = 'Random'
+      TabOrder = 3
+    end
+    object button_select_file: TButton
+      Left = 104
+      Top = 32
+      Width = 75
+      Height = 25
+      Caption = 'Select File'
+      TabOrder = 4
+      OnClick = button_select_fileClick
+    end
+    object button_crit_choose: TButton
+      Left = 136
+      Top = 112
+      Width = 75
+      Height = 25
+      Caption = 'Select criteria'
+      TabOrder = 5
+      OnClick = button_crit_chooseClick
+    end
+  end
+  object button_run: TButton
+    Left = 128
+    Top = 264
+    Width = 75
+    Height = 25
+    Caption = 'Run'
+    TabOrder = 1
+    OnClick = button_runClick
+  end
+  object edit_nb_lump: TEdit
+    Left = 232
+    Top = 216
+    Width = 65
+    Height = 21
+    TabOrder = 2
+  end
+  object label_nb_lump: TLabel
+    Left = 24
+    Top = 224
+    Width = 182
+    Height = 13
+    Caption = 'Down to specified number of nodes -->'
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = 'txt'
+    Filter = 'Aggregation file(*.txt)'
+    Title = 'Open'
+    Left = 216
+    Top = 80
+  end
+end

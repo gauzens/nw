@@ -1,0 +1,482 @@
+object form_import: Tform_import
+  Left = 193
+  Top = 120
+  Width = 468
+  Height = 829
+  VertScrollBar.Range = 817
+  HorzScrollBar.Range = 457
+  ActiveControl = button_import
+  Caption = 'IMPORT/EXPORT'
+  Color = clBackground
+  Icon.Data = {
+    0000010001002020100000000000E80200001600000028000000200000004000
+    0000010004000000000080020000000000000000000000000000000000000000
+    000000008000008000000080800080000000800080008080000080808000C0C0
+    C0000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000FF000099999999999999990000000000FF00009999
+    9999999999990000000000000000999999999999999900000000000000009999
+    9999999999990000000000000000999999999CCCCCCCFFFFFFF0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F0000000009999
+    99999C999999000000F000000000999999999C999999000000F000000000FFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFFFFFFF0FFFFFFCCCCCC9CCCCCCCCCFFFF
+    FFFFF00000009999999CCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF00FFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFF
+    FFFFFFFFFFFFCCCCCCCCCCCCCCCCFFFFFFFFFFFFFFFFCCCCCCCCCCCCCCCC0000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    000000000000000000000000000000000000000000000000000000000000}
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  TextWidth = 6
+  object groupbox_import: TGroupBox
+    Left = 8
+    Top = 8
+    Width = 449
+    Height = 73
+    Caption = 'Import'
+    TabOrder = 0
+    object button_import: TButton
+      Left = 192
+      Top = 24
+      Width = 60
+      Height = 25
+      Caption = 'IMPORT'
+      Color = clMidlight
+      TabOrder = 0
+      OnClick = button_importClick
+    end
+  end
+  object groupbox_export: TGroupBox
+    Left = 8
+    Top = 88
+    Width = 449
+    Height = 729
+    Caption = 'Export'
+    TabOrder = 1
+    object CB_species: TCheckBox
+      Left = 16
+      Top = 56
+      Width = 101
+      Height = 25
+      Caption = 'S - Nb Species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 0
+    end
+    object CB_links: TCheckBox
+      Left = 16
+      Top = 88
+      Width = 101
+      Height = 25
+      Caption = 'L - Nb Links'
+      Checked = True
+      State = cbChecked
+      TabOrder = 1
+    end
+    object CB_name: TCheckBox
+      Left = 16
+      Top = 24
+      Width = 101
+      Height = 25
+      Caption = 'Network name'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+    end
+    object CB_intens: TCheckBox
+      Left = 16
+      Top = 120
+      Width = 129
+      Height = 25
+      Caption = 'L/S - Linking intensity'
+      Checked = True
+      State = cbChecked
+      TabOrder = 3
+    end
+    object CB_connectance: TCheckBox
+      Left = 16
+      Top = 152
+      Width = 121
+      Height = 25
+      Caption = 'L/S^2 - Connectance'
+      Checked = True
+      State = cbChecked
+      TabOrder = 4
+    end
+    object CB_basal: TCheckBox
+      Left = 16
+      Top = 184
+      Width = 121
+      Height = 25
+      Caption = 'B - Nb Basal species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 5
+    end
+    object CB_intermediate: TCheckBox
+      Left = 16
+      Top = 216
+      Width = 153
+      Height = 25
+      Caption = 'I - Nb Intermediate species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 6
+    end
+    object CB_top: TCheckBox
+      Left = 16
+      Top = 248
+      Width = 121
+      Height = 25
+      Caption = 'T - Nb Top species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 7
+    end
+    object CB_deg: TCheckBox
+      Left = 224
+      Top = 24
+      Width = 137
+      Height = 25
+      Caption = 'Deg - Average degree'
+      Checked = True
+      State = cbChecked
+      TabOrder = 8
+    end
+    object CB_height: TCheckBox
+      Left = 16
+      Top = 376
+      Width = 137
+      Height = 25
+      Caption = 'H - Height'
+      Checked = True
+      State = cbChecked
+      TabOrder = 9
+    end
+    object CB_hmax: TCheckBox
+      Left = 16
+      Top = 408
+      Width = 137
+      Height = 25
+      Caption = 'Hmax - Height max'
+      Checked = True
+      State = cbChecked
+      TabOrder = 10
+    end
+    object CB_trolev: TCheckBox
+      Left = 16
+      Top = 536
+      Width = 137
+      Height = 25
+      Caption = 'TL - Trophic level'
+      Checked = True
+      State = cbChecked
+      TabOrder = 11
+    end
+    object CB_tlmax: TCheckBox
+      Left = 16
+      Top = 568
+      Width = 153
+      Height = 25
+      Caption = 'TLmax - Trophic level max'
+      Checked = True
+      State = cbChecked
+      TabOrder = 12
+    end
+    object button_export: TButton
+      Left = 184
+      Top = 680
+      Width = 75
+      Height = 25
+      Caption = 'EXPORT'
+      Color = clMidlight
+      TabOrder = 13
+      OnClick = button_exportClick
+    end
+    object CB_oi: TCheckBox
+      Left = 16
+      Top = 600
+      Width = 145
+      Height = 25
+      Caption = 'OI - Omnivory index'
+      Checked = True
+      State = cbChecked
+      TabOrder = 14
+    end
+    object CB_pathlen: TCheckBox
+      Left = 224
+      Top = 56
+      Width = 177
+      Height = 25
+      Caption = 'PathLen - Average path length'
+      Checked = True
+      State = cbChecked
+      TabOrder = 15
+    end
+    object CB_loops: TCheckBox
+      Left = 16
+      Top = 312
+      Width = 177
+      Height = 25
+      Caption = 'Cann - Nb cannibalistic species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 16
+    end
+    object CB_charlen: TCheckBox
+      Left = 224
+      Top = 88
+      Width = 169
+      Height = 25
+      Caption = 'CharLen - Characteristic length'
+      Checked = True
+      State = cbChecked
+      TabOrder = 17
+    end
+    object CB_diameter: TCheckBox
+      Left = 224
+      Top = 120
+      Width = 145
+      Height = 25
+      Caption = 'Diam - Diameter'
+      Checked = True
+      State = cbChecked
+      TabOrder = 18
+    end
+    object CB_radius: TCheckBox
+      Left = 224
+      Top = 152
+      Width = 145
+      Height = 25
+      Caption = 'Radius'
+      Checked = True
+      State = cbChecked
+      TabOrder = 19
+    end
+    object CB_entropy: TCheckBox
+      Left = 224
+      Top = 248
+      Width = 145
+      Height = 25
+      Caption = 'Ent - Entropy'
+      Checked = True
+      State = cbChecked
+      TabOrder = 20
+    end
+    object CB_scaled_entropy: TCheckBox
+      Left = 224
+      Top = 280
+      Width = 145
+      Height = 25
+      Caption = 'ScalEnt - Scaled entropy'
+      Checked = True
+      State = cbChecked
+      TabOrder = 21
+    end
+    object CB_basal_isol: TCheckBox
+      Left = 16
+      Top = 280
+      Width = 177
+      Height = 25
+      Caption = 'Bisol - Nb isolated basal species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 22
+    end
+    object CB_height_top: TCheckBox
+      Left = 16
+      Top = 440
+      Width = 161
+      Height = 25
+      Caption = 'Htop - Height of top species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 23
+    end
+    object CB_long_top: TCheckBox
+      Left = 16
+      Top = 472
+      Width = 193
+      Height = 25
+      Caption = 'Ltop - Length of paths basal -> top'
+      Checked = True
+      State = cbChecked
+      TabOrder = 24
+    end
+    object CB_clust: TCheckBox
+      Left = 224
+      Top = 184
+      Width = 145
+      Height = 25
+      Caption = 'Clust - Average clustering'
+      Checked = True
+      State = cbChecked
+      TabOrder = 25
+    end
+    object CB_assort: TCheckBox
+      Left = 224
+      Top = 216
+      Width = 145
+      Height = 25
+      Caption = 'Assort - Assortativity'
+      Checked = True
+      State = cbChecked
+      TabOrder = 26
+    end
+    object CB_omnivorous: TCheckBox
+      Left = 16
+      Top = 344
+      Width = 177
+      Height = 25
+      Caption = 'Omni - Nb omnivorous species'
+      Checked = True
+      State = cbChecked
+      TabOrder = 27
+    end
+    object CB_path_top: TCheckBox
+      Left = 16
+      Top = 504
+      Width = 193
+      Height = 25
+      Caption = 'PathTop - Nb of paths basal -> top'
+      Checked = True
+      State = cbChecked
+      TabOrder = 28
+    end
+    object CB_gentime: TCheckBox
+      Left = 224
+      Top = 312
+      Width = 153
+      Height = 25
+      Caption = 'GenT - Generation Time'
+      Checked = True
+      State = cbChecked
+      TabOrder = 29
+    end
+    object CB_kemeny: TCheckBox
+      Left = 224
+      Top = 344
+      Width = 137
+      Height = 25
+      Caption = 'Kem - Kemeny'#39's constant'
+      Checked = True
+      State = cbChecked
+      TabOrder = 30
+    end
+    object CB_Wheight: TCheckBox
+      Left = 224
+      Top = 376
+      Width = 137
+      Height = 25
+      Caption = 'WH - Weigthed height'
+      Checked = True
+      State = cbChecked
+      TabOrder = 31
+    end
+    object CB_Wtrolev: TCheckBox
+      Left = 224
+      Top = 408
+      Width = 177
+      Height = 25
+      Caption = 'WTL - Weigthed trophic level'
+      Checked = True
+      State = cbChecked
+      TabOrder = 32
+    end
+    object CB_Wtlmax: TCheckBox
+      Left = 224
+      Top = 440
+      Width = 209
+      Height = 25
+      Caption = 'WTLmax - Weigthed trophic level max'
+      Checked = True
+      State = cbChecked
+      TabOrder = 33
+    end
+    object CB_Woi: TCheckBox
+      Left = 224
+      Top = 472
+      Width = 177
+      Height = 25
+      Caption = 'WOI - Weigthed omnivory index'
+      Checked = True
+      State = cbChecked
+      TabOrder = 34
+    end
+    object CB_Wgen: TCheckBox
+      Left = 224
+      Top = 504
+      Width = 177
+      Height = 25
+      Caption = 'Weighted generalism'
+      Checked = True
+      State = cbChecked
+      TabOrder = 35
+    end
+    object CB_Wvul: TCheckBox
+      Left = 224
+      Top = 536
+      Width = 177
+      Height = 25
+      Caption = 'Weighted vulnerability'
+      Checked = True
+      State = cbChecked
+      TabOrder = 36
+    end
+    object CB_Wentropy: TCheckBox
+      Left = 224
+      Top = 568
+      Width = 177
+      Height = 25
+      Caption = 'Weighted entropy'
+      Checked = True
+      State = cbChecked
+      TabOrder = 37
+    end
+    object CB_Wgentime: TCheckBox
+      Left = 224
+      Top = 600
+      Width = 177
+      Height = 25
+      Caption = 'Weighted generation time'
+      Checked = True
+      State = cbChecked
+      TabOrder = 38
+    end
+    object CB_Wkem: TCheckBox
+      Left = 224
+      Top = 632
+      Width = 177
+      Height = 25
+      Caption = 'Weighted kemeny'#39's constant'
+      Checked = True
+      State = cbChecked
+      TabOrder = 39
+    end
+  end
+  object SaveDialog1: TSaveDialog
+    DefaultExt = 'nw0'
+    Filter = 'NETWORK files (*.nw0)|NETWORK files (*.nw1)|All files (*)|'
+    Title = 'Save As'
+    Left = 48
+    Top = 776
+  end
+  object OpenDialog1: TOpenDialog
+    DefaultExt = 'nw0'
+    Filter = 
+      'NETWORK files (*.nw0)|NETWORK files (*.nw1)|NETWORK files (*.nw2' +
+      ')|GML files (*.gml)|text files (*.txt)|All files (*)|'
+    Title = 'Ouvrir'
+    Left = 304
+    Top = 32
+  end
+end
