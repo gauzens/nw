@@ -11,4 +11,4 @@ kglobvar.pas defines the data structure\
 
 ### Prerequisites
 
-Works only with Windows (tested on xp, seven and 10)
+Windows (tested on xp, seven and 10)
